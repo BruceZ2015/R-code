@@ -21,8 +21,8 @@ kq = function(cards = 52, kings = 4, queens = 4, gap = 1, cyclic = FALSE) {
         prod(choose(kings + 1 - sum(r) - cumsum(v[hv:(lv-1)]), v[(hv+1):lv])) *
         C(free, kpos) * C(free - kpos, queens)
     } else {
-      prod(choose(kings - cumsum(c(0, v[1:(lv-1)])), v[1:lv])) *
-        C(free, kpos) * C(free - kpos, queens) * cards/kings
+        prod(choose(kings - cumsum(c(0, v[1:(lv-1)])), v[1:lv])) *
+         C(free, kpos) * C(free - kpos, queens) * cards/kings
     }
   }
   small = kings*2*(gap+1)
